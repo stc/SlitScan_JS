@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<!--
+
+	A ProcessingJS implementation of the Slitscan effect: introducing how to 
+	use the users webcam in order to access and process its pixels.
+	
+	The colours of the vertical center line of the live camera feed are
+	mapped to small ellipses which are then moving from left to right as
+	a slit scanner.  
+
+	The code uses the getUserMedia() call which is under heavy development,
+	currently working fine only with Google Chrome. 
+
+	(c) stc@binaura.net / 2012
+
+	-->
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<script type="text/javascript" src="./assets/processing-1.3.6.js"></script>
+		<script type="text/javascript" src="./assets/jquery-1.8.2.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="./assets/style.css">
+
+		<title>
+		     SlitScan JS
+		</title>
+	</head>
+
+	<body onload="$('#showInfo').fadeOut('fast');">
+		<video autoplay id="videostream"></video>
+	    
+	    <canvas id="myCanvas"></canvas>
+		
+		<!-- live cam + processingjs javascripts -->	    
+	    <script type="text/javascript" src="./assets/webcam.js"></script>
+	    <script type="text/javascript" src="./assets/draw.js"></script>
+
+	    <!-- info related -->
+	    <div id="showInfo" onclick="$('#showInfo').fadeOut('slow');">
+	    	A <a href="http://www.processingjs.org">Processingjs</a> implementation of the <a href ="http://en.wikipedia.org/wiki/Slit-scan_photography">Slitscan</a> effect. </br></br>
+	    	See more Processingjs, Javascript & Creative Coding experiments <a href="http://www.binaura.net/stc/fp/">here</a></br></br>
+	    	stc (at) binaura.net // 2012
+	    </div>
+	    <div id="openInfo" onclick="$('#showInfo').fadeIn('slow');">ABOUT</div>  
+	</body>
+</html>
